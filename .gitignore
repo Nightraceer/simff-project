@@ -2,8 +2,8 @@
 /app/vendor
 /app/config/local_settings.php
 
-/public/media/*
-/public/static/node_modules
+/public_html/media/*
+/public_html/static/node_modules
 
 .idea
 .DS_Store
