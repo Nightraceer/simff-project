@@ -3,7 +3,7 @@
 return [
     'paths' => [
         'app' => realpath(implode(DIRECTORY_SEPARATOR, [__DIR__, '..'])),
-        'public' => realpath(implode(DIRECTORY_SEPARATOR, [__DIR__, '..', '..', 'public'])),
+        'public' => realpath(implode(DIRECTORY_SEPARATOR, [__DIR__, '..', '..', 'public_html'])),
     ],
     'modules' => [
         'Base',
@@ -13,9 +13,9 @@ return [
         'db' => [
             'class' => \Simff\Db\Connection::class,
             'host' => '127.0.0.1',
-            'database' => 'ialexgpp_tony_bd',
-            'username' => 'ialexgpp_tony_bd',
-            'password' => '%QYOrAL4',
+            'database' => 'a9539403_t',
+            'username' => 'a9539403_t',
+            'password' => 'S*Q*nDN0',
             'charset' => 'utf8', // Optional
         ],
         'errorHandler' => [
