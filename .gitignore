@@ -1,0 +1,9 @@
+/app/runtime/*
+/app/vendor
+/app/config/local_settings.php
+
+/public/media/*
+/public/static/node_modules
+
+.idea
+.DS_Store

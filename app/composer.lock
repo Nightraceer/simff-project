@@ -1,0 +1,166 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "6dc0a573cd5e21e907abdb960482c862",
+    "packages": [
+        {
+            "name": "fenom/fenom",
+            "version": "2.11.9",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/fenom-template/fenom.git",
+                "reference": "9a1e56d16454a23c5c7353913625ee79543f9bac"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/fenom-template/fenom/zipball/9a1e56d16454a23c5c7353913625ee79543f9bac",
+                "reference": "9a1e56d16454a23c5c7353913625ee79543f9bac",
+                "shasum": ""
+            },
+            "require": {
+                "ext-tokenizer": "*",
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "<6.0",
+                "satooshi/php-coveralls": "*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Fenom\\": "src/"
+                },
+                "classmap": [
+                    "src/Fenom.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3"
+            ],
+            "authors": [
+                {
+                    "name": "Ivan Shalganov",
+                    "email": "a.cobest@gmail.com"
+                }
+            ],
+            "description": "Fenom - excellent template engine for PHP",
+            "keywords": [
+                "fenom",
+                "template",
+                "templater",
+                "templating"
+            ],
+            "time": "2018-03-28T09:36:06+00:00"
+        },
+        {
+            "name": "imagine/imagine",
+            "version": "v0.6.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/avalanche123/Imagine.git",
+                "reference": "149041d2a1b517107bfe270ca2b1a17aa341715d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/avalanche123/Imagine/zipball/149041d2a1b517107bfe270ca2b1a17aa341715d",
+                "reference": "149041d2a1b517107bfe270ca2b1a17aa341715d",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.2"
+            },
+            "require-dev": {
+                "sami/sami": "dev-master"
+            },
+            "suggest": {
+                "ext-gd": "to use the GD implementation",
+                "ext-gmagick": "to use the Gmagick implementation",
+                "ext-imagick": "to use the Imagick implementation"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-develop": "0.7-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Imagine": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Bulat Shakirzyanov",
+                    "email": "mallluhuct@gmail.com",
+                    "homepage": "http://avalanche123.com"
+                }
+            ],
+            "description": "Image processing for PHP 5.3",
+            "homepage": "http://imagine.readthedocs.org/",
+            "keywords": [
+                "drawing",
+                "graphics",
+                "image manipulation",
+                "image processing"
+            ],
+            "time": "2015-09-19T16:54:05+00:00"
+        },
+        {
+            "name": "simff",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Nightraceer/simff.git",
+                "reference": "1497e60ad9235560a899b5bc8931d42538fcf65a"
+            },
+            "require": {
+                "fenom/fenom": ">=2.11.1",
+                "imagine/imagine": "^0.6.3",
+                "php": ">=5.6"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^5"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Simff\\Main\\": "src/Simff/Main",
+                    "Simff\\Request\\": "src/Simff/Request",
+                    "Simff\\Controller\\": "src/Simff/Controller",
+                    "Simff\\Router\\": "src/Simff/Router",
+                    "Simff\\Template\\": "src/Simff/Template",
+                    "Simff\\Form\\": "src/Simff/Form",
+                    "Simff\\Module\\": "src/Simff/Module",
+                    "Simff\\Pagination\\": "src/Simff/Pagination",
+                    "Simff\\Helpers\\": "src/Simff/Helpers",
+                    "Simff\\Db\\": "src/Simff/Db",
+                    "Simff\\Model\\": "src/Simff/Model"
+                },
+                "files": [
+                    "src/Simff/dump.php"
+                ]
+            },
+            "description": "Simple fast framework",
+            "homepage": "https://github.com/Nightraceer/simff",
+            "time": "2018-09-23 07:40:03"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": {
+        "simff": 20
+    },
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": []
+}

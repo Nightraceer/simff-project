@@ -1,0 +1,24 @@
+{
+  "name": "simff/project",
+  "version": "1.0",
+  "type": "library",
+  "autoload": {
+    "psr-4": {
+      "Modules\\": "Modules"
+    }
+  },
+  "repositories": [
+    {
+      "url": "https://github.com/Nightraceer/simff.git",
+      "type": "git"
+    }
+  ],
+
+  "config": {
+    "cache-files-ttl": 0
+  },
+
+  "require": {
+    "simff": "dev-master"
+  }
+}

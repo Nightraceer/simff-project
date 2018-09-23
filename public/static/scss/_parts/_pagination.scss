@@ -1,0 +1,71 @@
+.pagination-block {
+  .pagination {
+    text-align: center;
+
+    a {
+      &:hover {
+        .bricks {
+          span {
+            &:nth-child(1) {
+              top: 2px;
+              left: 2px;
+            }
+            &:nth-child(2) {
+              top: 2px;
+              right: 2px;
+            }
+            &:nth-child(3) {
+              bottom: 2px;
+              left: 2px;
+            }
+            &:nth-child(4) {
+              bottom: 2px;
+              right: 2px;
+            }
+          }
+        }
+      }
+
+      .bricks {
+        position: relative;
+        width: 22px;
+        height: 22px;
+        display: inline-block;
+        margin-right: 10px;
+        vertical-align: middle;
+
+        span {
+          position: absolute;
+          width: 9px;
+          height: 9px;
+          display: inline-block;
+          background: $main-color;
+          transition: all 0.4s;
+
+          &:nth-child(1) {
+            top: 0;
+            left: 0;
+          }
+          &:nth-child(2) {
+            top: 0;
+            right: 0;
+          }
+          &:nth-child(3) {
+            bottom: 0;
+            left: 0;
+          }
+          &:nth-child(4) {
+            bottom: 0;
+            right: 0;
+          }
+        }
+      }
+
+      .text {
+        vertical-align: middle;
+        color: $main-color;
+        font-size: 20px;
+      }
+    }
+  }
+}
