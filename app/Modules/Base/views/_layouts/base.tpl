@@ -8,8 +8,8 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 
-    <link rel="stylesheet" href="/static/dist/css/main.css">
-    <script src="/static/dist/js/main.js"></script>
+    <link rel="stylesheet" href="/static/dist/css/main.css?v=2">
+    <script src="/static/dist/js/main.js?v=2"></script>
 
 
 </head>

@@ -15,14 +15,14 @@
 
                                     <select name="sort_name" id="">
                                         <option value="default">Имя (по умолчанию)</option>
-                                        <option value="ASC">Имя &#8593;</option>
-                                        <option value="DESC">Имя &#8595;</option>
+                                        <option {if $sortName == 'ASC'}selected{/if} value="ASC">Имя &#8593;</option>
+                                        <option {if $sortName == 'DESC'}selected{/if} value="DESC">Имя &#8595;</option>
                                     </select>
 
                                     <select name="sort_email" id="">
                                         <option value="default">Email (по умолчанию)</option>
-                                        <option value="ASC">Email &#8593;</option>
-                                        <option value="DESC">Email &#8595;</option>
+                                        <option {if $sortEmail == 'ASC'}selected{/if} value="ASC">Email &#8593;</option>
+                                        <option {if $sortEmail == 'DESC'}selected{/if} value="DESC">Email &#8595;</option>
                                     </select>
 
                                 </div>

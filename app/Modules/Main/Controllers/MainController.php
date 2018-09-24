@@ -30,11 +30,16 @@ class MainController extends Controller
             'source' => $tasks
         ]);
 
+        $sortName = isset($_GET['sort_name']) ? $_GET['sort_name'] : null;
+        $sortEmail = isset($_GET['sort_email']) ? $_GET['sort_email'] : null;
+
 
         echo $this->render("index/index.tpl", [
             'pager' => $pager,
             'form' => $form,
-            'user' => $user
+            'user' => $user,
+            'sortName' => $sortName,
+            'sortEmail' => $sortEmail
         ]);
     }
 
