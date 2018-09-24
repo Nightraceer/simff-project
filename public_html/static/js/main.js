@@ -3,31 +3,35 @@ $(function () {
     var timeout = 0;
 
     $(document)
-        .on('click', pagerLinkSelector, function (e) {
-            e.preventDefault();
-            var $this = $(this),
-                updateIdContainer = $this.data('next-pager-link'),
-                updateSelector = '[data-pagination-update="' + updateIdContainer + '"]',
-                paginationListSelector = '[data-pagination-list="' + updateIdContainer + '"]';
-
-            if ($this.hasClass('loading')) {
-                return false;
-            }
-
-            $this.addClass('loading');
-            $.ajax({
-                url: $this.attr('href'),
-                success: function (page) {
-                    var $page = $('<div/>').append(page);
-
-                    $(updateSelector).append($page.find(updateSelector).html());
-
-                    $(paginationListSelector).html($page.find(paginationListSelector).html());
-                    $this.removeClass('loading');
-                }
-            });
+        .on('click', 'a.modal', function (e) {
+            $(this).modal();
             return false;
         })
+        // .on('click', pagerLinkSelector, function (e) {
+        //     e.preventDefault();
+        //     var $this = $(this),
+        //         updateIdContainer = $this.data('next-pager-link'),
+        //         updateSelector = '[data-pagination-update="' + updateIdContainer + '"]',
+        //         paginationListSelector = '[data-pagination-list="' + updateIdContainer + '"]';
+        //
+        //     if ($this.hasClass('loading')) {
+        //         return false;
+        //     }
+        //
+        //     $this.addClass('loading');
+        //     $.ajax({
+        //         url: $this.attr('href'),
+        //         success: function (page) {
+        //             var $page = $('<div/>').append(page);
+        //
+        //             $(updateSelector).append($page.find(updateSelector).html());
+        //
+        //             $(paginationListSelector).html($page.find(paginationListSelector).html());
+        //             $this.removeClass('loading');
+        //         }
+        //     });
+        //     return false;
+        // })
 
         .on('click', '[data-save]', function () {
             var $this = $(this);
@@ -74,6 +78,8 @@ $(function () {
                     success: function (page) {
                         var $page = $('<div/>').append(page);
 
+                        console.log(page);
+
                         $('[data-filter-update]').html($page.find('[data-filter-update]').html());
                     }
                 });
@@ -84,6 +90,27 @@ $(function () {
     $('[data-sticky-form]').psticky({
         top: 20,
         parent: ".row"
+    });
+
+    var checkInputs = '.wrapper-create-task input, .wrapper-create-task textarea';
+
+    $(checkInputs).on('input', function () {
+       var $form  = $(this).closest('form');
+       var $preview = $form.find('[data-preview]');
+       var filled = false;
+
+        $(checkInputs).each(function () {
+            if ($(this).val().trim() !== '') {
+                filled = true;
+            }
+        });
+
+        if (filled) {
+            $preview.attr('href', $preview.data('preview') + '?' + $form.serialize());
+            $preview.addClass('show');
+        } else {
+            $preview.removeClass('show');
+        }
     });
 
 

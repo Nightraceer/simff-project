@@ -38,6 +38,11 @@ class MainModule extends Module
                 ],
                 'target' => [\Modules\Main\Controllers\MainController::class, 'edit'],
                 'name' => 'edit'
+            ],
+            [
+                'route' => '/preview',
+                'target' => [\Modules\Main\Controllers\MainController::class, 'preview'],
+                'name' => 'preview'
             ]
         ];
     }

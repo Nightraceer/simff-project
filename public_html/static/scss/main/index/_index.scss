@@ -17,61 +17,79 @@
   }
 
   .wrapper-tasks {
-    .wrapper-task {
-      position: relative;
-      padding: 25px 0;
 
+  }
 
-      &:not(:last-child) {
-        border-bottom: 1px solid #e2e3e5;
-      }
+  .wrapper-form {
+    .preview {
+      display: none;
+      font-size: 16px;
+      color: $main-color;
+      text-decoration: underline;
+      margin: 0 0 15px;
 
-      &.admin {
-        padding-right: 140px;
-      }
-
-      .name {
-        font-size: 24px;
-      }
-
-      .email {
-        font-size: 15px;
-        color: $main-color;
-        margin-bottom: 20px;
-      }
-
-      .text {
-        line-height: 1.2;
-        font-size: 18px;
-
-        textarea {
-          padding: 20px;
-        }
-      }
-
-      .holder-image {
-        margin-top: 20px;
-
-        img {
-          max-width: 150px;
-        }
-      }
-
-      .holder-done {
-        position: absolute;
-        right: 0;
-        top: 25px;
-      }
-
-      .holder-button {
-        position: absolute;
-        bottom: 25px;
-        right: 0;
-      }
-
-      .link {
-        padding: 6px 14px;
+      &.show {
+        display: inline-block;
       }
     }
+  }
+
+}
+
+.wrapper-task {
+
+  position: relative;
+  padding: 25px 0;
+
+
+  &:not(:last-child) {
+    border-bottom: 1px solid #e2e3e5;
+  }
+
+  &.admin {
+    padding-right: 140px;
+  }
+
+  .name {
+    font-size: 24px;
+  }
+
+  .email {
+    font-size: 15px;
+    color: $main-color;
+    margin-bottom: 20px;
+  }
+
+  .text {
+    line-height: 1.2;
+    font-size: 18px;
+
+    textarea {
+      padding: 20px;
+    }
+  }
+
+  .holder-image {
+    margin-top: 20px;
+
+    img {
+      max-width: 150px;
+    }
+  }
+
+  .holder-done {
+    position: absolute;
+    right: 0;
+    top: 25px;
+  }
+
+  .holder-button {
+    position: absolute;
+    bottom: 25px;
+    right: 0;
+  }
+
+  .link {
+    padding: 6px 14px;
   }
 }

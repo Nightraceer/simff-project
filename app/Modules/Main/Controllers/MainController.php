@@ -58,4 +58,19 @@ class MainController extends Controller
 
         $this->jsonResponse($data);
     }
+
+    public function previewAction()
+    {
+        if (!Simff::app()->request->getIsAjax()) {
+            $this->error(404);
+        }
+
+        $form = new Form(Task::class);
+        $form->fill($_GET);
+
+
+        echo $this->render("preview/index.tpl", [
+            'form' => $form
+        ]);
+    }
 }

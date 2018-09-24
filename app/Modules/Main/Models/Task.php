@@ -44,19 +44,13 @@ class Task extends Model
     public static function filtered()
     {
         $sql = "SELECT * FROM " . static::getTableName();
-        $filterName = null;
-        $filterStatus = null;
+        $enableSort = ['ASC', 'DESC'];
+        $sorted = false;
+
+        $sortName = isset($_GET['sort_name']) ? $_GET['sort_name'] : null;
+        $sortEmail = isset($_GET['sort_email']) ? $_GET['sort_email'] : null;
+
         $params = [];
-
-        if (isset($_GET['filter_name_or_email']) && $filterName = $_GET['filter_name_or_email']) {
-
-            $sql .= " WHERE (name LIKE :filter_name OR email LIKE :filter_email)";
-
-            $filterName = '%'.$filterName.'%';
-
-            $params['filter_name'] = $filterName;
-            $params['filter_email'] = $filterName;
-        }
 
 
         if (isset($_GET['filter_status'])) {
@@ -65,14 +59,24 @@ class Task extends Model
 
             if ($filterStatus != 'all') {
 
-                if ($filterName) {
-                    $sql .= " AND";
-                } else {
-                    $sql .= " WHERE";
-                }
-
-                $sql .= " done = :status";
+                $sql .= " WHERE done = :status";
                 $params['status'] = $filterStatus;
+            }
+        }
+
+        if (in_array($sortName, $enableSort) || in_array($sortEmail, $enableSort)) {
+            $sql .= " ORDER BY ";
+
+            if (in_array($sortName, $enableSort)) {
+                $sql .= "name $sortName";
+                $sorted = true;
+            }
+
+            if (in_array($sortEmail, $enableSort)) {
+                if ($sorted) {
+                    $sql .= ", ";
+                }
+                $sql .= "email $sortEmail";
             }
         }
 

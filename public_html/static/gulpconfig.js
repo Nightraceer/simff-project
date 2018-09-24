@@ -18,6 +18,7 @@ module.exports.static = {
         js: [
             'js/sticky.js',
             'js/ajax_validation.js',
+            'js/modal.js',
             'js/main.js',
         ],
         scss: [

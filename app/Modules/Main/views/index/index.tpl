@@ -9,8 +9,22 @@
                         <div class="wrapper-filter">
                             <form class="d-flex justify-content-between align-items-center" action="" method="get" data-form-filter>
                                 <div class="form-field">
-                                    <label for="sort-tasks">Введите имя или email</label>
-                                    <input type="text" id="sort-tasks" name="filter_name_or_email">
+                                    <div class="label">
+                                        Сортировать по:
+                                    </div>
+
+                                    <select name="sort_name" id="">
+                                        <option value="default">Имя (по умолчанию)</option>
+                                        <option value="ASC">Имя &#8593;</option>
+                                        <option value="DESC">Имя &#8595;</option>
+                                    </select>
+
+                                    <select name="sort_email" id="">
+                                        <option value="default">Email (по умолчанию)</option>
+                                        <option value="ASC">Email &#8593;</option>
+                                        <option value="DESC">Email &#8595;</option>
+                                    </select>
+
                                 </div>
 
                                 <div class="form-field">
@@ -33,11 +47,13 @@
                                         <div class="name">{$task->name}</div>
                                         <div class="email">{$task->email}</div>
                                         <div class="text">
+
                                             {if $admin}
                                                 <textarea data-field-text name="text" id="">{$task->text}</textarea>
                                             {else}
                                                 <div>{$task->text}</div>
                                             {/if}
+
                                         </div>
 
                                         {if $task->image}
@@ -71,12 +87,14 @@
                     </div>
                 </div>
                 <div class="col-3">
-                    <div class="wrapper-form" data-sticky-form>
+                    <div class="wrapper-form wrapper-create-task" data-sticky-form>
                         {set $formName = $form->getName()}
 
                         <form action="" data-reset="1" data-success="$('[data-form-filter] input').trigger('input')"
                               data-ajax-form="{$formName}" method="post" enctype="multipart/form-data" data-timeout="3000">
                             {include "_parts/form_fields.tpl" form=$form}
+
+                            <a href="" class="preview modal" data-preview="/preview">Предварительный просмотр</a>
 
                             <button type="submit">Создать задачу</button>
 
